@@ -8,3 +8,12 @@ services:
     volumes:
       - ./angular/:/app
       - /app/node_modules
+  svelte:
+    build:
+      context: ./svelte
+      dockerfile: Dockerfile.dev
+    ports:
+      - "5556:5556"
+    volumes:
+      - ./svelte/:/app
+      - /app/node_modules
