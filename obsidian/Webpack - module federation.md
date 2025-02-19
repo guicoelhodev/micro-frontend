@@ -1,5 +1,5 @@
 
-![](module_federation_icon.png)
 
-# Study section
+****- understand how micro front-end works
+- understand how micro front-end works
 
