@@ -1,0 +1,10 @@
+services:
+  angular:
+    build:
+      context: ./angular
+      dockerfile: Dockerfile.dev
+    ports:
+      - "5555:5555"
+    volumes:
+      - ./angular/:/app
+      - /app/node_modules
