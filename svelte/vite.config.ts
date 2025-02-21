@@ -12,7 +12,7 @@ export default defineConfig({
       name: "svelte-app",
       filename: "remoteEntry.js",
       exposes: {
-        "./mountButton": "./src/lib/Button/mount.js",
+        "./mountButton": "./src/lib/components/Button/mount.ts",
       },
       shared: ["svelte"],
     }),
