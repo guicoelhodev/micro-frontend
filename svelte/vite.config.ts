@@ -1,20 +1,23 @@
 import { defineConfig } from "vite";
 import { svelte } from "@sveltejs/vite-plugin-svelte";
-import { federation } from "@module-federation/vite";
+import federation from "@originjs/vite-plugin-federation";
 import tailwindcss from "@tailwindcss/vite";
 
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [
-    svelte(),
+    svelte({
+      compilerOptions: { customElement: true },
+    }),
     tailwindcss(),
     federation({
-      name: "svelte-app",
+      name: "svelteApp",
       filename: "remoteEntry.js",
       exposes: {
-        "./mountButton": "./src/lib/components/Button/mount.ts",
+        "./WCButton": "./src/lib/components/Button/Button.svelte",
+        "./hello": "./src/lib/utils/helloWord.ts",
       },
-      shared: ["svelte"],
+      shared: ["svelte", "tailwindcss"],
     }),
   ],
   build: {

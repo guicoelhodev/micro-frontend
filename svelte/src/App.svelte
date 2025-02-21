@@ -2,6 +2,6 @@
 	import Button from "./lib/components/Button/Button.svelte";
 </script>
 
-<main>
-	<Button />
+<main class="p-4">
+	<Button title="Button props" />
 </main>
